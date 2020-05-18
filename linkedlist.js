@@ -1,7 +1,4 @@
-// --- Directions
-// Implement classes Node and Linked Lists
-// See 'directions' document
-
+// likedList
 class Node {
     constructor(data, next = null) {
       this.data = data;
@@ -30,7 +27,98 @@ class Node {
       return counter;
     }
 
-    
+    getFirst(){
+        return this.head
+    }
+
+    getLast(){
+        let node = this.head
+        while(node){
+            if(!node.next){
+                return node
+            }
+            node = node.next
+        }
+        return null
+    }
+
+    clear(){
+        this.head = null
+    }
+
+    removeFirst(){
+        let node = this.head
+        if(node){
+            this.head = this.head.next
+        }
+        return;
+    }
+
+    removeLast(){
+        let node = this.head
+        if(!node){
+            return;
+        }
+        while(node){
+            if(!node.next){
+                this.head = null
+            }
+            return node = node.next
+        }
+    }
+
+    insertLast(data){
+        let node = this.head
+        if(!node){
+            this.head = new Node(data, this.head)
+        } else {
+            while(node){
+                if(!node.next){
+                    this.head = new Node(data, this.head)
+                }
+                return node = node.next
+            }
+        }
+    }
+
+    getAt(index){
+        let node = this.head
+        while(node){
+            let counter = 0;
+            if(counter === index){
+                return node
+            }
+            counter++
+            node = node.next
+        }
+        return null
+    }
+
+    removeAt(index){
+        let node = this.head
+        while(node){
+            let counter = 0;
+            if(counter === index){
+                this.head = this.head.next
+            }
+            counter++
+        }
+        return;
+    }
+
+    insertAt(data, index){
+        let node = this.head
+        while(node){
+            let counter = 0;
+            if(counter === index){
+                this.head = new Node(data, this.head)
+            }
+            counter++
+        }
+        this.head = new Node(data, this.head)
+        return;
+    }
+
 }
 const node = new Node('a', 'b');
 console.log(node)
@@ -38,4 +126,6 @@ const l = new LinkedList();
 console.log(l)
 l.insertFirst(1)
 l.size()
-console.log(l)
+l.removeLast()
+let last = l.getFirst()
+console.log(last)
