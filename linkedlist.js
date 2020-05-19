@@ -121,11 +121,8 @@ class Node {
 
 }
 const node = new Node('a', 'b');
-console.log(node)
 const l = new LinkedList();
-console.log(l)
-l.insertFirst(1)
 l.size()
-l.removeLast()
+l.getFirst()
 let last = l.getFirst()
 console.log(last)
