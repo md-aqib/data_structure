@@ -62,8 +62,9 @@ class Node {
         while(node){
             if(!node.next){
                 this.head = null
+                return;
             }
-            return node = node.next
+            node = node.next
         }
     }
 
@@ -75,8 +76,9 @@ class Node {
             while(node){
                 if(!node.next){
                     this.head = new Node(data, this.head)
+                    return;
                 }
-                return node = node.next
+                node = node.next
             }
         }
     }
